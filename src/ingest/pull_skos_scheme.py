@@ -8,18 +8,20 @@ import datetime as dt
 import re
 import sys
 from pathlib import Path
+from string import Template
 
 import requests
 from rdflib import Graph, URIRef
 from rdflib.namespace import SKOS
 
 PREFIXES = f"PREFIX skos: <{SKOS}>\n"
-CONSTRUCT_BODY = """CONSTRUCT {
-  <{scheme}> ?scheme_p ?scheme_o .
+CONSTRUCT_BODY_TEMPLATE = Template(
+    """CONSTRUCT {
+  <$scheme> ?scheme_p ?scheme_o .
   ?concept ?concept_p ?concept_o .
 }
 WHERE {
-  BIND(<{scheme}> AS ?scheme)
+  BIND(<$scheme> AS ?scheme)
   {
     ?scheme ?scheme_p ?scheme_o .
   } UNION {
@@ -28,6 +30,7 @@ WHERE {
   }
 }
 """
+)
 
 FORMAT_MAP = {
     "text/turtle": "turtle",
@@ -53,7 +56,7 @@ def main() -> None:
     snapshots_dir = Path(__file__).resolve().parents[2] / "data" / "snapshots"
     snapshots_dir.mkdir(parents=True, exist_ok=True)
 
-    query = PREFIXES + CONSTRUCT_BODY.format(scheme=args.scheme)
+    query = PREFIXES + CONSTRUCT_BODY_TEMPLATE.substitute(scheme=args.scheme)
     try:
         response = requests.post(
             args.endpoint,
