@@ -13,6 +13,7 @@ from string import Template
 import requests
 from rdflib import Graph, URIRef
 from rdflib.namespace import SKOS
+from zoneinfo import ZoneInfo
 
 PREFIXES = f"PREFIX skos: <{SKOS}>\n"
 CONSTRUCT_BODY_TEMPLATE = Template(
@@ -87,7 +88,8 @@ def main() -> None:
     label_text = label or fallback or "concept_scheme"
     slug = re.sub(r"[^0-9A-Za-z]+", "_", label_text).strip("_") or "concept_scheme"
 
-    timestamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    brisbane_now = dt.datetime.now(ZoneInfo("Australia/Brisbane"))
+    timestamp = brisbane_now.strftime("%Y%m%dT%H%M%S%z")
     extension = {
         "text/turtle": "ttl",
         "application/ld+json": "jsonld",
@@ -97,6 +99,8 @@ def main() -> None:
 
     graph.serialize(destination, format=FORMAT_MAP[args.format])
     print(f"Wrote snapshot to {destination}")
+    print(f"SNAPSHOT_PATH={destination}")
+    print(f"SCHEME_SLUG={slug}")
 
 
 if __name__ == "__main__":

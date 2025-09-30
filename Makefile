@@ -4,6 +4,7 @@ ONTOTOOLS ?= ontotools
 PYSHACL ?= pyshacl
 SHAPES ?= shapes/skos-basics.ttl
 FORMAT ?= text/turtle
+VIOLATIONS_DIR ?=
 
 # Optional passthrough flags
 EXTRA_PULL_ARGS ?= 
@@ -20,11 +21,21 @@ snapshot:
 		echo "SCHEME is required. Usage: make snapshot ENDPOINT=<sparql-endpoint> SCHEME=<concept-scheme-iri>"; \
 		exit 1; \
 	fi
+	@if [ -z "$(VIOLATIONS_DIR)" ]; then \
+		echo "VIOLATIONS_DIR is required. Usage: make snapshot ENDPOINT=<sparql-endpoint> SCHEME=<concept-scheme-iri> VIOLATIONS_DIR=<path-to-store-violations>"; \
+		exit 1; \
+	fi
 	@set -euo pipefail; \
 		SNAPSHOT_OUTPUT=$$($(PYTHON) $(SCRIPT) $(ENDPOINT) $(SCHEME) --format $(FORMAT) $(EXTRA_PULL_ARGS)); \
-		SNAPSHOT_PATH=$$(printf '%s\n' "$$SNAPSHOT_OUTPUT" | tail -n1 | sed -E 's/^Wrote snapshot to //'); \
+		SNAPSHOT_PATH=$$(printf '%s\n' "$$SNAPSHOT_OUTPUT" | sed -n 's/^SNAPSHOT_PATH=//p'); \
+		SCHEME_SLUG=$$(printf '%s\n' "$$SNAPSHOT_OUTPUT" | sed -n 's/^SCHEME_SLUG=//p'); \
 		if [ -z "$$SNAPSHOT_PATH" ]; then \
 			echo "Unable to determine snapshot path from script output:"; \
+			printf '%s\n' "$$SNAPSHOT_OUTPUT"; \
+			exit 1; \
+		fi; \
+		if [ -z "$$SCHEME_SLUG" ]; then \
+			echo "Unable to determine scheme slug from script output:"; \
 			printf '%s\n' "$$SNAPSHOT_OUTPUT"; \
 			exit 1; \
 		fi; \
@@ -32,4 +43,13 @@ snapshot:
 		echo "Normalizing snapshot $$SNAPSHOT_PATH"; \
 		$(ONTOTOOLS) file normalize $(ONTO_ARGS) $$SNAPSHOT_PATH; \
 		echo "Validating snapshot $$SNAPSHOT_PATH against $(SHAPES)"; \
-		$(PYSHACL) -s $(SHAPES) -d $$SNAPSHOT_PATH $(PYSHACL_ARGS)
+		REPORT_JSON=$$(mktemp "$(PWD)/pyshacl_report.XXXXXX.json"); \
+		set +e; \
+		$(PYSHACL) -s $(SHAPES) -d $$SNAPSHOT_PATH -f json-ld -o $$REPORT_JSON $(PYSHACL_ARGS); \
+		VALIDATION_STATUS=$$?; \
+		set -e; \
+		$(PYTHON) src/validation/export_validation_report.py "$$REPORT_JSON" "$$SCHEME_SLUG" "$(VIOLATIONS_DIR)"; \
+		rm -f $$REPORT_JSON; \
+		if [ $$VALIDATION_STATUS -ne 0 ]; then \
+			exit $$VALIDATION_STATUS; \
+		fi

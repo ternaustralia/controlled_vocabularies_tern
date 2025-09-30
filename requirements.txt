@@ -3,3 +3,4 @@ pyshacl
 rdflib
 pytest
 requests
+openpyxl
