@@ -1,23 +1,26 @@
-@prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix tern-shapes: <https://w3id.org/tern/shapes/tern/> .
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX tern-shapes: <https://w3id.org/tern/shapes/tern/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 tern-shapes:ConceptBaseline
     a sh:NodeShape ;
+    sh:property 
+        [
+            sh:message "Concepts must have at least one skos:prefLabel." ;
+            sh:minCount 1 ;
+            sh:path skos:prefLabel ;
+        ] ,
+        [
+            sh:message "Concepts must have at least one skos:definition." ;
+            sh:minCount 1 ;
+            sh:path skos:definition ;
+        ] ,
+        [
+            sh:message "Concepts must declare dcterms:source." ;
+            sh:minCount 1 ;
+            sh:path dcterms:source ;
+        ] ;
     sh:targetClass skos:Concept ;
-    sh:property [
-        sh:path skos:prefLabel ;
-        sh:minCount 1 ;
-        sh:message "Concepts must have at least one skos:prefLabel." ;
-    ] ;
-    sh:property [
-        sh:path skos:definition ;
-        sh:minCount 1 ;
-        sh:message "Concepts must have at least one skos:definition." ;
-    ] ;
-    sh:property [
-        sh:path dcterms:source ;
-        sh:minCount 1 ;
-        sh:message "Concepts must declare dcterms:source." ;
-    ] .
+.
