@@ -16,11 +16,6 @@ tern-shapes:ConceptBaseline
             sh:message "Concepts must have at least one skos:definition." ;
             sh:minCount 1 ;
             sh:path skos:definition ;
-        ] ,
-        [
-            sh:message "Concepts must declare dcterms:source." ;
-            sh:minCount 1 ;
-            sh:path dcterms:source ;
         ] ;
     sh:targetClass skos:Concept ;
 .
