@@ -15,6 +15,12 @@ from rdflib import Graph, URIRef
 from rdflib.namespace import SKOS
 from zoneinfo import ZoneInfo
 
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from publish.filters import remove_deprecated_concepts
+
 PREFIXES = f"PREFIX skos: <{SKOS}>\n"
 CONSTRUCT_BODY_TEMPLATE = Template(
     """CONSTRUCT {
@@ -72,6 +78,9 @@ def main() -> None:
 
     graph = Graph()
     graph.parse(data=response.text, format=FORMAT_MAP[args.format])
+    removed = remove_deprecated_concepts(graph)
+    if removed:
+        print(f"Filtered out {removed} deprecated concept(s) prior to snapshot serialization.")
 
     scheme_ref = URIRef(args.scheme)
     label = None

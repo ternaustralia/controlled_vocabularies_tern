@@ -10,7 +10,11 @@ import tempfile
 from pathlib import Path
 from typing import Iterable, Sequence
 
-from scheme_registry import DEFAULT_CONFIG, Scheme, load_registry, select_schemes
+from rdflib import Graph
+from rdflib.util import guess_format
+
+from publish.filters import remove_deprecated_concepts
+from scheme_registry import DEFAULT_CONFIG, load_registry, select_schemes
 from validation.export_validation_report import export_rows, load_violations
 
 
@@ -136,6 +140,28 @@ def _parse_pull_output(stdout: str) -> tuple[Path, str]:
     return snapshot_path, slug
 
 
+def strip_deprecated_concepts_from_snapshot(snapshot: Path) -> int:
+    """Remove deprecated concepts from a serialized graph on disk."""
+
+    graph = Graph()
+    try:
+        graph.parse(str(snapshot))
+    except Exception as exc:  # pragma: no cover - rdflib provides detailed errors
+        raise WorkflowError(
+            f"Failed to parse snapshot {snapshot} while stripping deprecated concepts: {exc}"
+        ) from exc
+
+    removed = remove_deprecated_concepts(graph)
+    if not removed:
+        return 0
+
+    suffix = snapshot.suffix.lower().lstrip(".")
+    format_hint = guess_format(suffix) or "turtle"
+    serialized = graph.serialize(format=format_hint)
+    snapshot.write_text(serialized, encoding="utf-8")
+    return removed
+
+
 def _normalize_snapshot(snapshot: Path, ontotools: str, extra_args: str) -> None:
     cmd = [ontotools, "file", "normalize"] + _shlex_split(extra_args) + [str(snapshot)]
     with tempfile.NamedTemporaryFile(delete=False, suffix=".ttl", mode="w+") as tmp:
@@ -232,6 +258,9 @@ def do_pipeline(args: argparse.Namespace) -> int:
                 request_format=args.format,
                 extra=args.pull_args,
             )
+            removed = strip_deprecated_concepts_from_snapshot(snapshot_path)
+            if removed:
+                print(f"Removed {removed} deprecated concept(s) before validation.")
             _normalize_snapshot(snapshot_path, args.ontotools, args.ontotools_args)
             validators = _unique_validators(Path(args.base_shape), scheme.validators)
             print("Using validators:")
@@ -270,6 +299,9 @@ def do_validate(args: argparse.Namespace) -> int:
     snapshot_path = args.snapshot
     if not snapshot_path.exists():
         raise WorkflowError(f"Snapshot {snapshot_path} not found")
+    removed = strip_deprecated_concepts_from_snapshot(snapshot_path)
+    if removed:
+        print(f"Removed {removed} deprecated concept(s) before validation.")
     slug = args.scheme_slug or snapshot_path.stem.split("_", 1)[0]
     validators = _unique_validators(Path(args.base_shape), args.schemes)
     report_path = _run_pyshacl(
