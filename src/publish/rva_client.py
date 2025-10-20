@@ -92,6 +92,7 @@ class RVAClient:
         vocabulary_id: str | int,
         upload_id: str | int,
         title: str,
+        web_page_url: str,
         release_date: str,
     ) -> dict:
         """Mark a new version as current for the vocabulary using the uploaded distribution."""
@@ -115,7 +116,7 @@ class RVAClient:
                     },
                     {
                         "ap-web-page": {
-                            "url": "https://linkeddata.tern.org.au/prez/dawe-cv/v/"
+                            "url": web_page_url
                         },
                         "source": "user",
                         "discriminator": "webPage",

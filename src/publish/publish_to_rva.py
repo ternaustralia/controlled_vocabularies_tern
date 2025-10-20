@@ -59,6 +59,15 @@ def build_parser() -> argparse.ArgumentParser:
         default=int(os.getenv("RVA_TIMEOUT", "60")),
         help="HTTP timeout in seconds. Defaults to RVA_TIMEOUT or 60.",
     )
+    parser.add_argument(
+        "--web-page-url",
+        dest="web_page_url",
+        default=None,
+        help=(
+            "Public URL for the vocabulary web access point. "
+            "Falls back to RVA_WEB_PAGE_URL environment variable if omitted."
+        ),
+    )
     return parser
 
 
@@ -98,6 +107,9 @@ def publish(args: argparse.Namespace) -> int:
         args.vocabulary_id, "RVA_VOCABULARY_ID", display="RVA vocabulary id"
     )
     version = resolve_required(args.version, "RVA_VERSION", display="Vocabulary version")
+    web_page_url = resolve_required(
+        args.web_page_url, "RVA_WEB_PAGE_URL", display="Access point web page URL"
+    )
 
     payload, filter_results = assemble_payload(args.path)
 
@@ -146,7 +158,9 @@ def publish(args: argparse.Namespace) -> int:
         f"with release date {release_date}."
     )
     try:
-        client.publish_new_vocabulary_version(vocabulary_id, upload_id, version, release_date)
+        client.publish_new_vocabulary_version(
+            vocabulary_id, upload_id, version, web_page_url, release_date
+        )
     except RVAClientError as exc:
         raise SystemExit(f"Failed to publish new vocabulary version: {exc}") from exc
 

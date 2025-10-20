@@ -30,12 +30,18 @@ class DummyClient:
         return "456", filename
 
     def publish_new_vocabulary_version(
-        self, vocabulary_id: str | int, upload_id: str | int, title: str, release_date: str
+        self,
+        vocabulary_id: str | int,
+        upload_id: str | int,
+        title: str,
+        web_page_url: str,
+        release_date: str,
     ) -> dict:
         self.published = {
             "vocabulary_id": vocabulary_id,
             "upload_id": upload_id,
             "title": title,
+            "web_page_url": web_page_url,
             "release_date": release_date,
         }
         return {"status": "ok"}
@@ -99,6 +105,7 @@ def test_publish_happy_path(monkeypatch, capsys):
         environment="test",
         upload_filename="upload.ttl",
         timeout=60,
+        web_page_url="https://example.org/vocab",
     )
 
     exit_code = publish_to_rva.publish(args)
@@ -112,6 +119,7 @@ def test_publish_happy_path(monkeypatch, capsys):
     assert "Removed 3 skos:broader/skos:narrower" in captured.out
     assert dummy_client.uploads[0][0] == b"ttl-bytes"
     assert dummy_client.published["title"] == "1.2.3"
+    assert dummy_client.published["web_page_url"] == "https://example.org/vocab"
 
 
 def test_publish_requires_owner(monkeypatch):
@@ -135,6 +143,7 @@ def test_publish_requires_owner(monkeypatch):
         environment="test",
         upload_filename="upload.ttl",
         timeout=60,
+        web_page_url="https://example.org/vocab",
     )
 
     with pytest.raises(SystemExit) as exc:
