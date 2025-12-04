@@ -17,5 +17,21 @@ tern-shapes:ConceptBaseline
             sh:minCount 1 ;
             sh:path skos:definition ;
         ] ;
+    sh:or (
+        [
+            sh:property [
+                sh:message "Concepts must have at least one skos:broader or skos:narrower relationship." ;
+                sh:minCount 1 ;
+                sh:path skos:broader ;
+            ] ;
+        ]
+        [
+            sh:property [
+                sh:message "Concepts must have at least one skos:broader or skos:narrower relationship." ;
+                sh:minCount 1 ;
+                sh:path skos:narrower ;
+            ] ;
+        ]
+    ) ;
     sh:targetClass skos:Concept ;
 .
