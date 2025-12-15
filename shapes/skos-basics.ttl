@@ -20,16 +20,23 @@ tern-shapes:ConceptBaseline
     sh:or (
         [
             sh:property [
-                sh:message "Concepts must have at least one skos:broader or skos:narrower relationship." ;
+                sh:message "Concepts must have at least one skos:broader or skos:narrower relationship unless they are declared a top concept." ;
                 sh:minCount 1 ;
                 sh:path skos:broader ;
             ] ;
         ]
         [
             sh:property [
-                sh:message "Concepts must have at least one skos:broader or skos:narrower relationship." ;
+                sh:message "Concepts must have at least one skos:broader or skos:narrower relationship unless they are declared a top concept." ;
                 sh:minCount 1 ;
                 sh:path skos:narrower ;
+            ] ;
+        ]
+        [
+            sh:property [
+                sh:message "Concepts without broader/narrower relations must be marked as top concepts using skos:topConceptOf." ;
+                sh:minCount 1 ;
+                sh:path skos:topConceptOf ;
             ] ;
         ]
     ) ;
