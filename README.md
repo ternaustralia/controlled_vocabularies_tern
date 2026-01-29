@@ -26,11 +26,23 @@ The main entry point is `src/workflow.py`, which also backs the Make targets:
   ```
   Optional flags: `SCHEME=<scheme-id-or-iri>`, `ENDPOINT=<override>`, and custom runner flags via `PIPELINE_FLAGS` (e.g. `PIPELINE_FLAGS="--pyshacl pyshacl --ontotools ontotools"`).
 
+- Full pipeline (pull → normalize → validate → report) for all registered collections:
+  ```
+  make collection-pipeline VIOLATIONS_DIR=downloads/violations
+  ```
+  Optional flags: `COLLECTION=<collection-id-or-iri>`, `ENDPOINT=<override>`, `MAX_DEPTH=<n>` (default 3), and custom runner flags via `COLLECTION_PIPELINE_FLAGS` (e.g. `COLLECTION_PIPELINE_FLAGS="--pyshacl pyshacl --ontotools ontotools"`).
+
 - Pull snapshots only:
   ```
   make pull
   ```
   Supports the same `SCHEME`/`ENDPOINT` selection as the pipeline.
+
+- Pull collection snapshots only:
+  ```
+  make collection-pull
+  ```
+  Supports the same `COLLECTION`/`ENDPOINT`/`MAX_DEPTH` selection as the collection pipeline (default depth 3).
 
 - Validate an existing snapshot and export violations:
   ```
@@ -43,4 +55,6 @@ The main entry point is `src/workflow.py`, which also backs the Make targets:
   make normalize SNAPSHOT=data/snapshots/example.ttl
   ```
 
-You can also invoke the runner directly, e.g. `python src/workflow.py pipeline --violations-dir downloads/violations`. See `python src/workflow.py --help` for full options. Schemes and their validator files are maintained in `config/schemes.yaml`.
+You can also invoke the runner directly, e.g. `python src/workflow.py pipeline --violations-dir downloads/violations`. See `python src/workflow.py --help` for full options. Schemes and their validator files are maintained in `config/schemes.yaml`, and collections live in `config/collections.yaml`.
+
+Baseline validator files are `shapes/scheme-basics.ttl` for ConceptSchemes and `shapes/collection-basics.ttl` for Collections.

@@ -1,4 +1,4 @@
-"""Command-line workflow runner for SKOS ConceptScheme processing."""
+"""Command-line workflow runner for SKOS ConceptScheme and Collection processing."""
 
 from __future__ import annotations
 
@@ -13,13 +13,18 @@ from typing import Iterable, Sequence
 from rdflib import Graph
 from rdflib.util import guess_format
 
+from collection_registry import DEFAULT_CONFIG as COLLECTIONS_CONFIG
+from collection_registry import load_registry as load_collection_registry
+from collection_registry import select_collections
 from publish.filters import remove_deprecated_concepts
-from scheme_registry import DEFAULT_CONFIG, load_registry, select_schemes
+from scheme_registry import DEFAULT_CONFIG as SCHEMES_CONFIG
+from scheme_registry import load_registry, select_schemes
 from validation.export_validation_report import export_rows, load_violations
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 PULL_SCRIPT = PROJECT_ROOT / "ingest" / "pull_skos_scheme.py"
+PULL_COLLECTION_SCRIPT = PROJECT_ROOT / "ingest" / "pull_skos_collection.py"
 
 
 class WorkflowError(Exception):
@@ -34,8 +39,8 @@ def _build_parser() -> argparse.ArgumentParser:
     common.add_argument(
         "--config",
         type=Path,
-        default=DEFAULT_CONFIG,
-        help=f"Path to scheme registry (default: {DEFAULT_CONFIG})",
+        default=SCHEMES_CONFIG,
+        help=f"Path to scheme registry (default: {SCHEMES_CONFIG})",
     )
     common.add_argument(
         "--scheme",
@@ -74,7 +79,7 @@ def _build_parser() -> argparse.ArgumentParser:
     pipeline.add_argument("--pyshacl-args", default="", help="Extra pyshacl arguments.")
     pipeline.add_argument(
         "--base-shape",
-        default="shapes/skos-basics.ttl",
+        default="shapes/scheme-basics.ttl",
         help="Baseline SHACL shapes file (auto-added for every validation run).",
     )
 
@@ -102,7 +107,7 @@ def _build_parser() -> argparse.ArgumentParser:
     validate.add_argument("--pyshacl-args", default="")
     validate.add_argument(
         "--base-shape",
-        default="shapes/skos-basics.ttl",
+        default="shapes/scheme-basics.ttl",
         help="Baseline validator applied to every run.",
     )
 
@@ -110,6 +115,70 @@ def _build_parser() -> argparse.ArgumentParser:
     normalize.add_argument("snapshot", type=Path, help="Snapshot to normalize in place")
     normalize.add_argument("--ontotools", default="ontotools")
     normalize.add_argument("--ontotools-args", default="")
+
+    collection_common = argparse.ArgumentParser(add_help=False)
+    collection_common.add_argument(
+        "--config",
+        type=Path,
+        default=COLLECTIONS_CONFIG,
+        help=f"Path to collections registry (default: {COLLECTIONS_CONFIG})",
+    )
+    collection_common.add_argument(
+        "--collection",
+        help="Run a specific collection (registry id or collection IRI)."
+        " If omitted, run all registered collections.",
+    )
+    collection_common.add_argument(
+        "--endpoint",
+        help="Endpoint override when --collection is provided but missing from the registry.",
+    )
+    collection_common.add_argument(
+        "--format",
+        default="text/turtle",
+        help="Serialization format to request from the endpoint (default: text/turtle).",
+    )
+    collection_common.add_argument(
+        "--pull-args", default="", help="Extra arguments for the collection pull script."
+    )
+    collection_common.add_argument(
+        "--max-depth",
+        type=int,
+        default=3,
+        help="Maximum nesting depth of collection members to pull (default: 3).",
+    )
+
+    collection_pipeline = subparsers.add_parser(
+        "collection-pipeline", parents=[collection_common]
+    )
+    collection_pipeline.add_argument(
+        "--violations-dir",
+        required=True,
+        type=Path,
+        help="Directory where validation XLSX reports should be written.",
+    )
+    collection_pipeline.add_argument(
+        "--ontotools",
+        default="ontotools",
+        help="ontotools executable (default: ontotools).",
+    )
+    collection_pipeline.add_argument(
+        "--ontotools-args",
+        default="",
+        help="Extra ontotools arguments (quoted string).",
+    )
+    collection_pipeline.add_argument(
+        "--pyshacl", default="pyshacl", help="pyshacl executable name."
+    )
+    collection_pipeline.add_argument(
+        "--pyshacl-args", default="", help="Extra pyshacl arguments."
+    )
+    collection_pipeline.add_argument(
+        "--base-shape",
+        default="shapes/collection-basics.ttl",
+        help="Baseline SHACL shapes file (auto-added for every validation run).",
+    )
+
+    collection_pull = subparsers.add_parser("collection-pull", parents=[collection_common])
 
     return parser
 
@@ -135,8 +204,12 @@ def _parse_pull_output(stdout: str) -> tuple[Path, str]:
             snapshot_path = Path(line.split("=", 1)[1].strip())
         elif line.startswith("SCHEME_SLUG="):
             slug = line.split("=", 1)[1].strip()
+        elif line.startswith("COLLECTION_SLUG="):
+            slug = line.split("=", 1)[1].strip()
     if snapshot_path is None or slug is None:
-        raise WorkflowError("Pull script did not emit SNAPSHOT_PATH and SCHEME_SLUG metadata.")
+        raise WorkflowError(
+            "Pull script did not emit SNAPSHOT_PATH and SCHEME_SLUG/COLLECTION_SLUG metadata."
+        )
     return snapshot_path, slug
 
 
@@ -231,6 +304,30 @@ def _run_pull(endpoint: str, concept_scheme: str, request_format: str, extra: st
     return _parse_pull_output(completed.stdout)
 
 
+def _run_collection_pull(
+    endpoint: str,
+    collection: str,
+    request_format: str,
+    extra: str,
+    max_depth: int | None,
+) -> tuple[Path, str]:
+    cmd = [
+        sys.executable,
+        str(PULL_COLLECTION_SCRIPT),
+        endpoint,
+        collection,
+        "--format",
+        request_format,
+    ]
+    if max_depth is not None:
+        cmd.extend(["--max-depth", str(max_depth)])
+    cmd += _shlex_split(extra)
+    completed = _run_subprocess(cmd)
+    if completed.stdout:
+        print(completed.stdout.strip())
+    return _parse_pull_output(completed.stdout)
+
+
 def _unique_validators(base_shape: Path, extras: Iterable[str]) -> list[str]:
     seen: set[str] = set()
     ordered: list[str] = []
@@ -279,6 +376,44 @@ def do_pipeline(args: argparse.Namespace) -> int:
     return overall_status
 
 
+def do_collection_pipeline(args: argparse.Namespace) -> int:
+    registry = load_collection_registry(args.config)
+    collections = list(select_collections(registry, args.collection, args.endpoint))
+    if not collections:
+        raise WorkflowError("No collections to process.")
+
+    overall_status = 0
+    for collection in collections:
+        print(f"\n=== Processing {collection.identifier} ===")
+        try:
+            snapshot_path, slug = _run_collection_pull(
+                endpoint=collection.endpoint,
+                collection=collection.collection,
+                request_format=args.format,
+                extra=args.pull_args,
+                max_depth=args.max_depth,
+            )
+            removed = strip_deprecated_concepts_from_snapshot(snapshot_path)
+            if removed:
+                print(f"Removed {removed} deprecated concept(s) before validation.")
+            _normalize_snapshot(snapshot_path, args.ontotools, args.ontotools_args)
+            validators = _unique_validators(Path(args.base_shape), collection.validators)
+            print("Using validators:")
+            for validator in validators:
+                print(f"  - {validator}")
+            report_path = _run_pyshacl(
+                snapshot=snapshot_path,
+                validators=validators,
+                pyshacl_exe=args.pyshacl,
+                extra_args=args.pyshacl_args,
+            )
+            _export_report(report_path, slug, args.violations_dir)
+        except WorkflowError as exc:
+            overall_status = 1
+            print(f"Error: {exc}", file=sys.stderr)
+    return overall_status
+
+
 def do_pull(args: argparse.Namespace) -> int:
     registry = load_registry(args.config)
     schemes = list(select_schemes(registry, args.scheme, args.endpoint))
@@ -291,6 +426,23 @@ def do_pull(args: argparse.Namespace) -> int:
             concept_scheme=scheme.concept_scheme,
             request_format=args.format,
             extra=args.pull_args,
+        )
+    return 0
+
+
+def do_collection_pull(args: argparse.Namespace) -> int:
+    registry = load_collection_registry(args.config)
+    collections = list(select_collections(registry, args.collection, args.endpoint))
+    if not collections:
+        raise WorkflowError("No collections to process.")
+    for collection in collections:
+        print(f"\n=== Pulling {collection.identifier} ===")
+        _run_collection_pull(
+            endpoint=collection.endpoint,
+            collection=collection.collection,
+            request_format=args.format,
+            extra=args.pull_args,
+            max_depth=args.max_depth,
         )
     return 0
 
@@ -329,7 +481,9 @@ def main(argv: list[str] | None = None) -> int:
 
     handlers = {
         "pipeline": do_pipeline,
+        "collection-pipeline": do_collection_pipeline,
         "pull": do_pull,
+        "collection-pull": do_collection_pull,
         "validate": do_validate,
         "normalize": do_normalize,
     }

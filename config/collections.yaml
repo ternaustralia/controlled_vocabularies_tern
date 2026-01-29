@@ -1,0 +1,27 @@
+# Registry of Collection workflows.
+#
+# Example structure:
+#
+# collections:
+#   - id: example_collection            # Optional friendly identifier
+#     name: Example Collection          # Optional descriptive label
+#     endpoint: https://example.org/sparql
+#     collection: https://example.org/collection
+#     validators:
+#       - shapes/collection-basics.ttl
+#
+# The baseline validator specified via the Makefile (defaults to
+# shapes/collection-basics.ttl) is always included automatically, so only list
+# additional files when you need extra constraints.
+
+collections: 
+  - id: "http://linked.data.gov.au/def/tern-cv/bd6f696c-cc8d-4096-b291-a40c834a5bee"
+    name: "NVIS Categorical Values Version 7"
+    endpoint: "https://graphdb.tern.org.au/repositories/tern_vocabs_core"
+    collection: "http://linked.data.gov.au/def/tern-cv/bd6f696c-cc8d-4096-b291-a40c834a5bee"
+    validators: []
+  - id: "http://linked.data.gov.au/def/tern-cv/5666ea05-ab09-4cb5-99fe-7d9a7258c209"
+    name: "Australian Soil and Land Survey Field Handbook Categorical Values"
+    endpoint: "https://graphdb.tern.org.au/repositories/tern_vocabs_core"
+    collection: "http://linked.data.gov.au/def/tern-cv/5666ea05-ab09-4cb5-99fe-7d9a7258c209"
+    validators: []

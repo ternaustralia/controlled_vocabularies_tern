@@ -54,7 +54,7 @@ def export_rows(rows: list[tuple[str, str, str]], scheme_slug: str, output_dir: 
     workbook = Workbook()
     sheet = workbook.active
     sheet.title = "Violations"
-    sheet.append(["ConceptIRI", "Predicate", "Violation"])
+    sheet.append(["FocusNode", "Predicate", "Violation"])
     for row in rows:
         sheet.append(row)
     workbook.save(destination)

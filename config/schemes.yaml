@@ -8,11 +8,11 @@
 #     endpoint: https://example.org/sparql
 #     concept_scheme: https://example.org/concept-scheme
 #     validators:
-#       - shapes/skos-basics.ttl
+#       - shapes/scheme-basics.ttl
 #       - shapes/example-custom.ttl
 #
 # The baseline validator specified via the Makefile (defaults to
-# shapes/skos-basics.ttl) is always included automatically, so only list
+# shapes/scheme-basics.ttl) is always included automatically, so only list
 # additional files when you need extra constraints.
 
 schemes:
@@ -44,4 +44,3 @@ schemes:
     concept_scheme: "http://linked.data.gov.au/def/tern-cv/a3088b5c-622d-4e25-8a75-4c4961b0dfe8"
     validators:
       - shapes/instrument_type_shapes.ttl
-
