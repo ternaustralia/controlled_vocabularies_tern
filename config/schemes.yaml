@@ -1,0 +1,46 @@
+# Registry of ConceptScheme workflows.
+#
+# Example structure:
+#
+# schemes:
+#   - id: example_scheme              # Optional friendly identifier
+#     name: Example Concept Scheme    # Optional descriptive label
+#     endpoint: https://example.org/sparql
+#     concept_scheme: https://example.org/concept-scheme
+#     validators:
+#       - shapes/scheme-basics.ttl
+#       - shapes/example-custom.ttl
+#
+# The baseline validator specified via the Makefile (defaults to
+# shapes/scheme-basics.ttl) is always included automatically, so only list
+# additional files when you need extra constraints.
+
+schemes:
+  - id: "http://linked.data.gov.au/def/tern-cv/68af3d25-c801-4089-afff-cf701e2bd61d"
+    name: "Feature Types"
+    endpoint: "https://graphdb.tern.org.au/repositories/tern_vocabs_core"
+    concept_scheme: "http://linked.data.gov.au/def/tern-cv/68af3d25-c801-4089-afff-cf701e2bd61d"
+    validators:
+      - shapes/feature_type_shapes.ttl
+  - id: "http://linked.data.gov.au/def/tern-cv/fff92d7d-a90e-4781-adc8-84a476f62541"
+    name: "Platform Types"
+    endpoint: "https://graphdb.tern.org.au/repositories/tern_vocabs_core"
+    concept_scheme: "http://linked.data.gov.au/def/tern-cv/fff92d7d-a90e-4781-adc8-84a476f62541"
+    validators: []
+  - id: "http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924"
+    name: "Attributes"
+    endpoint: "https://graphdb.tern.org.au/repositories/tern_vocabs_core"
+    concept_scheme: "http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924"
+    validators: []
+  - id: "http://linked.data.gov.au/def/tern-cv/5699eca7-9ef0-47a6-bcfb-9306e0e2b85e"
+    name: "Parameters"
+    endpoint: "https://graphdb.tern.org.au/repositories/tern_vocabs_core"
+    concept_scheme: "http://linked.data.gov.au/def/tern-cv/5699eca7-9ef0-47a6-bcfb-9306e0e2b85e"
+    validators:
+      - shapes/parameter_type_shapes.ttl
+  - id: "http://linked.data.gov.au/def/tern-cv/a3088b5c-622d-4e25-8a75-4c4961b0dfe8"
+    name: "Instrument Types"
+    endpoint: "https://graphdb.tern.org.au/repositories/tern_vocabs_core"
+    concept_scheme: "http://linked.data.gov.au/def/tern-cv/a3088b5c-622d-4e25-8a75-4c4961b0dfe8"
+    validators:
+      - shapes/instrument_type_shapes.ttl

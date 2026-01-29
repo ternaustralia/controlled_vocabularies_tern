@@ -1,0 +1,940 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://linked.data.gov.au/def/tern-cv/bd6f696c-cc8d-4096-b291-a40c834a5bee> a skos:Collection ;
+    rdfs:label "NVIS Categorical Values Version 7"@en ;
+    dcterms:created "2022-06-06T01:18:34"^^xsd:dateTime ;
+    dcterms:date "2022-06-06T01:18:34"^^xsd:dateTime,
+        "2026-01-29T03:19:53"^^xsd:dateTime ;
+    dcterms:modified "2026-01-29T03:19:53"^^xsd:dateTime ;
+    skos:member <http://linked.data.gov.au/def/tern-cv/0738e5be-0c86-4e49-8d5b-7a238ec6a586>,
+        <http://linked.data.gov.au/def/tern-cv/26b7e0dc-5f68-4582-870e-2a4837a0e932>,
+        <http://linked.data.gov.au/def/tern-cv/30fd1935-85ca-4174-b2f8-171c2ccdf22c>,
+        <http://linked.data.gov.au/def/tern-cv/765499b7-ff0d-44ff-b440-2bf9e82cc731>,
+        <http://linked.data.gov.au/def/tern-cv/a4489e4d-4576-4f8f-9d6b-f1d5a6770274>,
+        <http://linked.data.gov.au/def/tern-cv/b91ed8f5-9b2f-4510-ace1-2bc3fe51e1cb>,
+        <http://linked.data.gov.au/def/tern-cv/db52882b-d7f2-4149-8af4-91218cce2f0d> ;
+    skos:prefLabel "NVIS Categorical Values Version 7"@en .
+
+<http://linked.data.gov.au/def/tern-cv/044f129a-c9dd-42f9-a7ba-3800b0fd5320> a skos:Concept ;
+    rdfs:label "ground stratum" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:51:54"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:description "This is the lower or ground layer of the vegetation stratum and includes growth forms like Grasses, forbs, sedges, rushes, vines, lichens, epiphytes, low shrubs, ferns, bryophytes, cycads, grass-trees, aquatics, seagrasses." ;
+    dcterms:modified "2025-09-17T21:51:54"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Lower, ground (if only one ground layer occurs it is coded G1)" ;
+    skos:notation "G" ;
+    skos:note "Lower, ground (if only one ground layer occurs it is coded G1)" ;
+    skos:prefLabel "ground stratum" .
+
+<http://linked.data.gov.au/def/tern-cv/0738e5be-0c86-4e49-8d5b-7a238ec6a586> a skos:Collection ;
+    rdfs:label "NVIS stratum type categories"@en ;
+    dcterms:created "2022-06-06T01:18:34"^^xsd:dateTime ;
+    dcterms:date "2022-06-06T01:18:34"^^xsd:dateTime,
+        "2022-11-21T01:18:28"^^xsd:dateTime ;
+    dcterms:modified "2022-11-21T01:18:28"^^xsd:dateTime ;
+    skos:member <http://linked.data.gov.au/def/tern-cv/044f129a-c9dd-42f9-a7ba-3800b0fd5320>,
+        <http://linked.data.gov.au/def/tern-cv/9c345ebc-6c6b-4cf4-bcf9-eba63eb4be44>,
+        <http://linked.data.gov.au/def/tern-cv/e925f8a8-086b-4479-8d3b-b75740eba9d9> ;
+    skos:prefLabel "NVIS stratum type categories"@en .
+
+<http://linked.data.gov.au/def/tern-cv/08f02a64-cd97-4aac-bc3a-a6e270dbdf51> a skos:Concept ;
+    rdfs:label "height class 7" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:51:04"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T21:51:04"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Height of vegetation between 10 - 30 metres" ;
+    skos:notation "7" ;
+    skos:note "Height of vegetation between 10 - 30 metres" ;
+    skos:prefLabel "height class 7" .
+
+<http://linked.data.gov.au/def/tern-cv/0e83677a-84d7-470d-a769-29011328ef4c> a skos:Concept ;
+    rdfs:label "aquatic" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2022-11-20T23:24:11"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2022-11-20T23:24:11"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Plant growing in an inland waterway or wetland with the majority of its biomass under water for most of the year. Fresh, saline or brackish water." ;
+    skos:notation "Q" ;
+    skos:note "Plant growing in an inland waterway or wetland with the majority of its biomass under water for most of the year. Fresh, saline or brackish water." ;
+    skos:prefLabel "aquatic" .
+
+<http://linked.data.gov.au/def/tern-cv/13a245e8-14ff-4702-8182-62947f36e5ab> a skos:Concept ;
+    rdfs:label "tussock grass" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2022-06-07T05:03:49"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2022-06-07T05:03:49"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Grass forming discrete but open tussocks usually with distinct individual shoots, or if not, then forming a hummock. These are the common agricultural grasses." ;
+    skos:notation "G" ;
+    skos:note "Grass forming discrete but open tussocks usually with distinct individual shoots, or if not, then forming a hummock. These are the common agricultural grasses." ;
+    skos:prefLabel "tussock grass" .
+
+<http://linked.data.gov.au/def/tern-cv/15cf05f1-bbeb-494d-8050-6bc52a0b1688> a skos:Concept ;
+    rdfs:label "NVIS substratum G3",
+        "ground 3" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:53:36"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T21:53:36"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:altLabel "NVIS substratum G3" ;
+    skos:definition "Substrate surface" ;
+    skos:notation "G3" ;
+    skos:note "Substrate surface" ;
+    skos:prefLabel "ground 3" .
+
+<http://linked.data.gov.au/def/tern-cv/26b7e0dc-5f68-4582-870e-2a4837a0e932> a skos:Collection ;
+    rdfs:label "NVIS cover class categories"@en ;
+    dcterms:created "2022-06-06T01:18:34"^^xsd:dateTime ;
+    dcterms:date "2022-06-06T01:18:34"^^xsd:dateTime,
+        "2022-11-21T03:11:53"^^xsd:dateTime ;
+    dcterms:modified "2022-11-21T03:11:53"^^xsd:dateTime ;
+    skos:member <http://linked.data.gov.au/def/tern-cv/31c70b45-01ec-44ba-834c-7342d7a37206>,
+        <http://linked.data.gov.au/def/tern-cv/5ca50527-40da-4694-804f-42372a6513b7>,
+        <http://linked.data.gov.au/def/tern-cv/64147711-2644-4e31-b649-b5a54d0717a7>,
+        <http://linked.data.gov.au/def/tern-cv/93287e85-43c5-405b-bfc3-19f62802713b>,
+        <http://linked.data.gov.au/def/tern-cv/996311df-2a44-44be-b8d9-89b3d6c91406>,
+        <http://linked.data.gov.au/def/tern-cv/a7e1fd86-5d75-4d70-9ed0-5079845ed53d>,
+        <http://linked.data.gov.au/def/tern-cv/d36e262e-9443-4ff0-9beb-63770b015756> ;
+    skos:prefLabel "NVIS cover class categories"@en .
+
+<http://linked.data.gov.au/def/tern-cv/2bcc298c-3355-4bf0-9bfc-21ca119d6342> a skos:Concept ;
+    rdfs:label "height class 1" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:49:43"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T21:49:43"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Height of vegetation <0.5 metres" ;
+    skos:notation "1" ;
+    skos:note "Height of vegetation <0.5 metres" ;
+    skos:prefLabel "height class 1" .
+
+<http://linked.data.gov.au/def/tern-cv/2d439bef-3bdc-4605-b751-e474dfe005a7> a skos:Concept ;
+    rdfs:label "height class 3" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:50:06"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T21:50:06"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Height of vegetation between 1 - 2 metres" ;
+    skos:notation "3" ;
+    skos:note "Height of vegetation between 1 - 2 metres" ;
+    skos:prefLabel "height class 3" .
+
+<http://linked.data.gov.au/def/tern-cv/30fd1935-85ca-4174-b2f8-171c2ccdf22c> a skos:Collection ;
+    rdfs:label "NVIS substratum type categories"@en ;
+    dcterms:created "2022-06-06T01:18:34"^^xsd:dateTime ;
+    dcterms:date "2022-06-06T01:18:34"^^xsd:dateTime,
+        "2022-11-21T01:37:31"^^xsd:dateTime ;
+    dcterms:modified "2022-11-21T01:37:31"^^xsd:dateTime ;
+    skos:member <http://linked.data.gov.au/def/tern-cv/15cf05f1-bbeb-494d-8050-6bc52a0b1688>,
+        <http://linked.data.gov.au/def/tern-cv/34abb624-de9b-4ab1-b968-210d4bbfddad>,
+        <http://linked.data.gov.au/def/tern-cv/6a8e5ed6-4d1e-414f-be4d-a792bb165786>,
+        <http://linked.data.gov.au/def/tern-cv/7d2bfd66-4f20-40af-864b-04f2591f206b>,
+        <http://linked.data.gov.au/def/tern-cv/84bb9e0e-fba1-4904-8c57-1ffdb8179a95>,
+        <http://linked.data.gov.au/def/tern-cv/a384b56b-e4ea-490f-9a4e-2e92ebb3d66c>,
+        <http://linked.data.gov.au/def/tern-cv/edf31297-5f10-42a4-bda3-1a9dbcaf3912>,
+        <http://linked.data.gov.au/def/tern-cv/f2f3bb92-6605-40fa-8a04-8d37f14c6901>,
+        <http://linked.data.gov.au/def/tern-cv/ff20d11c-db08-4f3f-a6d8-576a0fb7a880> ;
+    skos:prefLabel "NVIS substratum type categories"@en .
+
+<http://linked.data.gov.au/def/tern-cv/31c70b45-01ec-44ba-834c-7342d7a37206> a skos:Concept ;
+    rdfs:label "cover class d" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:47:29"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T21:47:29"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "NVIS cover class, where either foliage cover 70 - 100%, Crown cover >80% or Cover >80%" ;
+    skos:notation "d" ;
+    skos:note "NVIS cover class, where either foliage cover 70 - 100%, Crown cover >80% or Cover >80%" ;
+    skos:prefLabel "cover class d" .
+
+<http://linked.data.gov.au/def/tern-cv/33173529-e80d-458a-8182-27486279aae2> a skos:Concept ;
+    rdfs:label "height class 2" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:49:54"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T21:49:54"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Height of vegetation range between 0.5 - 1 metre" ;
+    skos:notation "2" ;
+    skos:note "Height of vegetation range between 0.5 - 1 metre" ;
+    skos:prefLabel "height class 2" .
+
+<http://linked.data.gov.au/def/tern-cv/349b7fb7-724e-487a-8af6-4a375ab753c7> a skos:Concept ;
+    rdfs:label "fern" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2022-06-07T05:03:49"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2022-06-07T05:03:49"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Ferns and fern allies, except tree-fern, above. Characterised by large and usually branched leaves (fronds), herbaceous and terrestrial to aquatic; spores in sporangia on the leaves." ;
+    skos:notation "E" ;
+    skos:note "Ferns and fern allies, except tree-fern, above. Characterised by large and usually branched leaves (fronds), herbaceous and terrestrial to aquatic; spores in sporangia on the leaves." ;
+    skos:prefLabel "fern" .
+
+<http://linked.data.gov.au/def/tern-cv/34abb624-de9b-4ab1-b968-210d4bbfddad> a skos:Concept ;
+    rdfs:label "NVIS substratum G2",
+        "ground 2" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:53:17"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T21:53:17"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:altLabel "NVIS substratum G2" ;
+    skos:definition "Ground." ;
+    skos:notation "G2" ;
+    skos:note "Ground." ;
+    skos:prefLabel "ground 2" .
+
+<http://linked.data.gov.au/def/tern-cv/3727d11b-a526-44a8-8f5c-4b3df6f996ae> a skos:Concept ;
+    rdfs:label "heath shrub" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2022-06-07T05:03:49"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2022-06-07T05:03:49"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Shrub usually less than 2 m, with sclerophyllous leaves having high fibre: protein ratios and with an area of nanophyll or smaller (less than 225 sq mm). Often a member of one the following families: Ericaceae, Myrtaceae, Fabaceae and Proteaceae. Commonly occur on nutrient-poor substrates." ;
+    skos:notation "Z" ;
+    skos:note "Shrub usually less than 2 m, with sclerophyllous leaves having high fibre: protein ratios and with an area of nanophyll or smaller (less than 225 sq mm). Often a member of one the following families: Ericaceae, Myrtaceae, Fabaceae and Proteaceae. Commonly occur on nutrient-poor substrates." ;
+    skos:prefLabel "heath shrub" .
+
+<http://linked.data.gov.au/def/tern-cv/5046280e-cf21-4efa-a545-231611c2c761> a skos:Concept ;
+    rdfs:label "vine" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2022-06-07T05:03:49"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2022-06-07T05:03:49"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Climbing, twining, winding or sprawling plants usually with a woody stem." ;
+    skos:notation "L" ;
+    skos:note "Climbing, twining, winding or sprawling plants usually with a woody stem." ;
+    skos:prefLabel "vine" .
+
+<http://linked.data.gov.au/def/tern-cv/52589bb6-d2c4-4a98-a5d3-b54c62ad6692> a skos:Concept ;
+    rdfs:label "height class 5" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:50:34"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T21:50:34"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Height of vegetation <3 metres" ;
+    skos:notation "5" ;
+    skos:note "Height of vegetation <3 metres" ;
+    skos:prefLabel "height class 5" .
+
+<http://linked.data.gov.au/def/tern-cv/528d513f-9b50-4ac6-b8f3-b6e8fe8fb972> a skos:Concept ;
+    rdfs:label "sub-formation" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T22:02:00"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T22:02:00"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Dominant genus (or genera) plus growth form, cover and height for each of the three main strata. (i.e. Upper, Mid and Ground)." ;
+    skos:notation "4" ;
+    skos:note "Dominant genus (or genera) plus growth form, cover and height for each of the three main strata. (i.e. Upper, Mid and Ground)." ;
+    skos:prefLabel "sub-formation" .
+
+<http://linked.data.gov.au/def/tern-cv/55e190be-00dd-4d35-b073-fded374e69bb> a skos:Concept ;
+    rdfs:label "foliage projective cover" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:49:03"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T21:49:03"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "The proportion of the ground, which would be shaded if sunshine came from directly overhead" ;
+    skos:notation "fpc" ;
+    skos:note "The proportion of the ground, which would be shaded if sunshine came from directly overhead" ;
+    skos:prefLabel "foliage projective cover" .
+
+<http://linked.data.gov.au/def/tern-cv/59ca183e-1d35-4c43-9bdf-a83457e4307d> a skos:Concept ;
+    rdfs:label "sub-association" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T22:01:49"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T22:01:49"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "DDominant growth form, height, cover and species (to a maximum of 5 species) for each of the substrata." ;
+    skos:notation "6" ;
+    skos:note "DDominant growth form, height, cover and species (to a maximum of 5 species) for each of the substrata." ;
+    skos:prefLabel "sub-association" .
+
+<http://linked.data.gov.au/def/tern-cv/59dc9b4a-7b67-40ff-bc93-d66ed6b2d908> a skos:Concept ;
+    rdfs:label "tree" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2022-06-07T05:03:49"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2022-06-07T05:03:49"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Woody plants, more than 2 m tall with a single stem or branches well above the base." ;
+    skos:notation "T" ;
+    skos:note "Woody plants, more than 2 m tall with a single stem or branches well above the base." ;
+    skos:prefLabel "tree" .
+
+<http://linked.data.gov.au/def/tern-cv/5ca50527-40da-4694-804f-42372a6513b7> a skos:Concept ;
+    rdfs:label "cover class bc" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:46:55"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T21:46:55"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "NVIS cover class, where either foliage cover 0 - 5%, crown cover 0 - 5% or cover 0 - 5%" ;
+    skos:notation "bc" ;
+    skos:note "NVIS cover class, where either foliage cover 0 - 5%, crown cover 0 - 5% or cover 0 - 5%" ;
+    skos:prefLabel "cover class bc" .
+
+<http://linked.data.gov.au/def/tern-cv/630f2c88-68ec-4cdb-a3d6-022a9cc43aa4> a skos:Concept ;
+    rdfs:label "height class 6" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:50:48"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T21:50:48"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Height of vegetation <10 metres" ;
+    skos:notation "6" ;
+    skos:note "Height of vegetation <10 metres" ;
+    skos:prefLabel "height class 6" .
+
+<http://linked.data.gov.au/def/tern-cv/64147711-2644-4e31-b649-b5a54d0717a7> a skos:Concept ;
+    rdfs:label "cover class c" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:47:18"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T21:47:18"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "NVIS cover class, where either foliage cover 30 - 70%, crown cover 50 - 80% or cover 50 - 80%" ;
+    skos:notation "c" ;
+    skos:note "NVIS cover class, where either foliage cover 30 - 70%, crown cover 50 - 80% or cover 50 - 80%" ;
+    skos:prefLabel "cover class c" .
+
+<http://linked.data.gov.au/def/tern-cv/6a8e5ed6-4d1e-414f-be4d-a792bb165786> a skos:Concept ;
+    rdfs:label "NVIS substratum M3",
+        "middle 3" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:54:16"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T21:54:16"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:altLabel "NVIS substratum M3" ;
+    skos:definition "Third shrub layer." ;
+    skos:notation "M3" ;
+    skos:note "Third shrub layer." ;
+    skos:prefLabel "middle 3" .
+
+<http://linked.data.gov.au/def/tern-cv/6b683421-3149-4fb0-ae56-b19f983ec409> a skos:Concept ;
+    rdfs:label "mallee shrub" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2022-06-07T05:03:49"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2022-06-07T05:03:49"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Commonly less than 8 m tall, usually with five or more trunks, of which at least three of the largest do not exceed 100 mm diameter at breast height (1.3 m)." ;
+    skos:notation "Y" ;
+    skos:note "Commonly less than 8 m tall, usually with five or more trunks, of which at least three of the largest do not exceed 100 mm diameter at breast height (1.3 m)." ;
+    skos:prefLabel "mallee shrub" .
+
+<http://linked.data.gov.au/def/tern-cv/712be291-ef1e-41c1-a0a3-2565ac224fa8> a skos:Concept ;
+    rdfs:label "other grass" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2022-06-07T05:03:49"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2022-06-07T05:03:49"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Member of the family Poaceae, but having neither a distinctive tussock nor hummock appearance. Examples include stoloniferous species such as Cynodon dactylon." ;
+    skos:notation "W" ;
+    skos:note "Member of the family Poaceae, but having neither a distinctive tussock nor hummock appearance. Examples include stoloniferous species such as Cynodon dactylon." ;
+    skos:prefLabel "other grass" .
+
+<http://linked.data.gov.au/def/tern-cv/72d381e6-2921-4c28-98b1-6767097055d3> a skos:Concept ;
+    rdfs:label "epiphyte" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2022-06-07T05:03:49"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2022-06-07T05:03:49"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Epiphytes, mistletoes and parasites. Plant with roots attached to the aerial portions of other plants. Can often be another growth form, such as fern or forb." ;
+    skos:notation "K" ;
+    skos:note "Epiphytes, mistletoes and parasites. Plant with roots attached to the aerial portions of other plants. Can often be another growth form, such as fern or forb." ;
+    skos:prefLabel "epiphyte" .
+
+<http://linked.data.gov.au/def/tern-cv/765499b7-ff0d-44ff-b440-2bf9e82cc731> a skos:Collection ;
+    rdfs:label "NVIS vegetation hierarchy categories"@en ;
+    dcterms:created "2022-06-06T01:18:34"^^xsd:dateTime ;
+    dcterms:date "2022-06-06T01:18:34"^^xsd:dateTime,
+        "2022-11-20T23:24:44"^^xsd:dateTime ;
+    dcterms:modified "2022-11-20T23:24:44"^^xsd:dateTime ;
+    skos:member <http://linked.data.gov.au/def/tern-cv/528d513f-9b50-4ac6-b8f3-b6e8fe8fb972>,
+        <http://linked.data.gov.au/def/tern-cv/59ca183e-1d35-4c43-9bdf-a83457e4307d>,
+        <http://linked.data.gov.au/def/tern-cv/a07e9cdb-aceb-4172-87f7-d793630901a9>,
+        <http://linked.data.gov.au/def/tern-cv/aa5bac68-9932-4af4-b9de-6162e28a7bbe>,
+        <http://linked.data.gov.au/def/tern-cv/e697214b-9225-49ae-8a75-78d293fa3d09>,
+        <http://linked.data.gov.au/def/tern-cv/eb86708f-ad5d-4278-ae74-967e0ebaf8b1> ;
+    skos:prefLabel "NVIS vegetation hierarchy categories"@en .
+
+<http://linked.data.gov.au/def/tern-cv/7698e775-1987-43f5-803d-1528589f1718> a skos:Concept ;
+    rdfs:label "lower plant" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2022-06-07T05:03:49"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2022-06-07T05:03:49"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Algae, fungus." ;
+    skos:notation "O" ;
+    skos:note "Algae, fungus." ;
+    skos:prefLabel "lower plant" .
+
+<http://linked.data.gov.au/def/tern-cv/7d2bfd66-4f20-40af-864b-04f2591f206b> a skos:Concept ;
+    rdfs:label "Emergent",
+        "upper 1" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:54:28"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T21:54:28"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:altLabel "Emergent" ;
+    skos:definition "Tallest tree substratum" ;
+    skos:notation "U1" ;
+    skos:note "For forests and woodlands this will generally be the dominant stratum, except where the substratum cover is <5% and hence considered “emergent”. For a continuum (e.g. no distinct or discernible layering in the vegetation) the tallest stratum becomes the defining substratum. ",
+        "Tallest tree substratum" ;
+    skos:prefLabel "upper 1" .
+
+<http://linked.data.gov.au/def/tern-cv/84bb9e0e-fba1-4904-8c57-1ffdb8179a95> a skos:Concept ;
+    rdfs:label "NVIS substratum G1",
+        "ground 1" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:53:02"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T21:53:02"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:altLabel "NVIS substratum G1" ;
+    skos:definition "Tallest ground species." ;
+    skos:notation "G1" ;
+    skos:note "Tallest ground species." ;
+    skos:prefLabel "ground 1" .
+
+<http://linked.data.gov.au/def/tern-cv/8d67015b-4749-4e58-8cff-b0ce8d073a26> a skos:Concept ;
+    rdfs:label "chenopod shrub" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2022-06-07T05:03:49"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2022-06-07T05:03:49"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Single or multi-stemmed, semi-succulent shrub of the family Chenopodiaceae exhibiting drought and salt tolerance." ;
+    skos:notation "C" ;
+    skos:note "Single or multi-stemmed, semi-succulent shrub of the family Chenopodiaceae exhibiting drought and salt tolerance." ;
+    skos:prefLabel "chenopod shrub" .
+
+<http://linked.data.gov.au/def/tern-cv/93287e85-43c5-405b-bfc3-19f62802713b> a skos:Concept ;
+    rdfs:label "cover class r" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:47:59"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T21:47:59"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "NVIS cover class, where either foliage cover <10%, crown cover 0.25 - 20% or cover 0.25 - 20%" ;
+    skos:notation "r" ;
+    skos:note "NVIS cover class, where either foliage cover <10%, crown cover 0.25 - 20% or cover 0.25 - 20%" ;
+    skos:prefLabel "cover class r" .
+
+<http://linked.data.gov.au/def/tern-cv/93cf82ef-1e00-4220-bec4-75490375b911> a skos:Concept ;
+    rdfs:label "grass-tree" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2022-06-07T05:03:49"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2022-06-07T05:03:49"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Australian grass trees. Members of the Xanthorrhoeaceae family." ;
+    skos:notation "X" ;
+    skos:note "Australian grass trees. Members of the Xanthorrhoeaceae family." ;
+    skos:prefLabel "grass-tree" .
+
+<http://linked.data.gov.au/def/tern-cv/9868a11d-dce0-47ef-b792-b533bc1d11d5> a skos:Concept ;
+    rdfs:label "height class 4" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:50:21"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T21:50:21"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Height of vegetation >2 metres" ;
+    skos:notation "4" ;
+    skos:note "Height of vegetation >2 metres" ;
+    skos:prefLabel "height class 4" .
+
+<http://linked.data.gov.au/def/tern-cv/996311df-2a44-44be-b8d9-89b3d6c91406> a skos:Concept ;
+    rdfs:label "cover class bi" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:47:07"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T21:47:07"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "NVIS cover class, where either foliage cover ~0%, crown cover <0.25% or cover <0.25%" ;
+    skos:notation "bi" ;
+    skos:note "NVIS cover class, where either foliage cover ~0%, crown cover <0.25% or cover <0.25%" ;
+    skos:prefLabel "cover class bi" .
+
+<http://linked.data.gov.au/def/tern-cv/9ae3ffec-031e-4c4a-88b1-f718567b26c3> a skos:Concept ;
+    rdfs:label "samphire shrub" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2022-06-07T05:03:49"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2022-06-07T05:03:49"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Genera (of Tribe Salicornioideae, viz.: Halosarcia, Pachycornia, Sarcocornia, Sclerostegia, Tecticornia and Tegicornia) with articulate branches, fleshy stems and reduced flowers within the Chenopodiaceae family, succulent chenopods (Wilson 1980). Also the genus Suaeda" ;
+    skos:notation "U" ;
+    skos:note "Genera (of Tribe Salicornioideae, viz.: Halosarcia, Pachycornia, Sarcocornia, Sclerostegia, Tecticornia and Tegicornia) with articulate branches, fleshy stems and reduced flowers within the Chenopodiaceae family, succulent chenopods (Wilson 1980). Also the genus Suaeda" ;
+    skos:prefLabel "samphire shrub" .
+
+<http://linked.data.gov.au/def/tern-cv/9c345ebc-6c6b-4cf4-bcf9-eba63eb4be44> a skos:Concept ;
+    rdfs:label "Dominant stratum",
+        "upper stratum" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:52:21"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:description "This is the uppermost layer of the vegetation and comprises of growth forms such as Trees, tree mallees, palms, vines (mallee shrubs). May also include epiphytes, lichens on tree trunks." ;
+    dcterms:modified "2025-09-17T21:52:21"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:altLabel "Dominant stratum" ;
+    skos:definition "The Upper, tree Overstorey/Canopy layer." ;
+    skos:notation "U" ;
+    skos:note "The Upper, tree Overstorey/Canopy layer." ;
+    skos:prefLabel "upper stratum" .
+
+<http://linked.data.gov.au/def/tern-cv/a07e9cdb-aceb-4172-87f7-d793630901a9> a skos:Concept ;
+    rdfs:label "structural formation" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T22:01:30"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T22:01:30"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Dominant growth form, cover and height (in the standardised notation of Table 7) for the structurally dominant stratum." ;
+    skos:notation "2" ;
+    skos:note "Dominant growth form, cover and height (in the standardised notation of Table 7) for the structurally dominant stratum." ;
+    skos:prefLabel "structural formation" .
+
+<http://linked.data.gov.au/def/tern-cv/a384b56b-e4ea-490f-9a4e-2e92ebb3d66c> a skos:Concept ;
+    rdfs:label "NVIS substratum U3",
+        "upper 3" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:54:51"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T21:54:51"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:altLabel "NVIS substratum U3" ;
+    skos:definition "Sub-canopy layer, third tree layer." ;
+    skos:notation "U3" ;
+    skos:note "Sub-canopy layer, third tree layer." ;
+    skos:prefLabel "upper 3" .
+
+<http://linked.data.gov.au/def/tern-cv/a4489e4d-4576-4f8f-9d6b-f1d5a6770274> a skos:Collection ;
+    rdfs:label "NVIS cover type categories"@en ;
+    dcterms:created "2022-06-06T01:18:34"^^xsd:dateTime ;
+    dcterms:date "2022-06-06T01:18:34"^^xsd:dateTime,
+        "2022-11-21T01:52:20"^^xsd:dateTime ;
+    dcterms:modified "2022-11-21T01:52:20"^^xsd:dateTime ;
+    skos:member <http://linked.data.gov.au/def/tern-cv/55e190be-00dd-4d35-b073-fded374e69bb>,
+        <http://linked.data.gov.au/def/tern-cv/d3061a89-3550-40e5-a2fc-32b74ffadabb> ;
+    skos:prefLabel "NVIS cover type categories"@en .
+
+<http://linked.data.gov.au/def/tern-cv/a7e1fd86-5d75-4d70-9ed0-5079845ed53d> a skos:Concept ;
+    rdfs:label "cover class unknown" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:48:17"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T21:48:17"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "NVIS cover class, where either foliage cover, crown cover or percentage cover is unknown" ;
+    skos:notation "unknown" ;
+    skos:note "NVIS cover class, where either foliage cover, crown cover or percentage cover is unknown" ;
+    skos:prefLabel "cover class unknown" .
+
+<http://linked.data.gov.au/def/tern-cv/aa5bac68-9932-4af4-b9de-6162e28a7bbe> a skos:Concept ;
+    rdfs:label "broad floristic formation" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T22:00:55"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T22:00:55"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Dominant genus (or genera) plus growth form, cover and height for the structurally dominant stratum." ;
+    skos:notation "3" ;
+    skos:note "Dominant genus (or genera) plus growth form, cover and height for the structurally dominant stratum." ;
+    skos:prefLabel "broad floristic formation" .
+
+<http://linked.data.gov.au/def/tern-cv/ab699e97-cf4e-4226-be5b-51ea5cbaea08> a skos:Concept ;
+    rdfs:label "forb" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2022-06-07T05:03:49"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2022-06-07T05:03:49"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Herbaceous or slightly woody, annual or sometimes perennial plant. (Usually a dicotyledon)." ;
+    skos:notation "F" ;
+    skos:note "Herbaceous or slightly woody, annual or sometimes perennial plant. (Usually a dicotyledon)." ;
+    skos:prefLabel "forb" .
+
+<http://linked.data.gov.au/def/tern-cv/ac1aa7bb-009e-40d7-a4ae-b8dfc7e1bb46> a skos:Concept ;
+    rdfs:label "height class 8" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:51:18"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T21:51:18"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Height of vegetation >30 metres" ;
+    skos:notation "8" ;
+    skos:note "Height of vegetation >30 metres" ;
+    skos:prefLabel "height class 8" .
+
+<http://linked.data.gov.au/def/tern-cv/b3df0155-7941-41d9-bc08-84d6372d0457> a skos:Concept ;
+    rdfs:label "rush" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2022-06-07T05:03:49"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2022-06-07T05:03:49"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Herbaceous, usually perennial erect monocot that is neither a grass nor a sedge. For the purposes of NVIS, rushes include the monocotyledon families Juncaceae, Typhaceae, Liliaceae, Iridaceae, Xyridaceae and the genus Lomandra. (i.e. graminoid or grass-like genera)." ;
+    skos:notation "R" ;
+    skos:note "Herbaceous, usually perennial erect monocot that is neither a grass nor a sedge. For the purposes of NVIS, rushes include the monocotyledon families Juncaceae, Typhaceae, Liliaceae, Iridaceae, Xyridaceae and the genus Lomandra. (i.e. graminoid or grass-like genera)." ;
+    skos:prefLabel "rush" .
+
+<http://linked.data.gov.au/def/tern-cv/b91ed8f5-9b2f-4510-ace1-2bc3fe51e1cb> a skos:Collection ;
+    rdfs:label "NVIS height class categories"@en ;
+    dcterms:created "2022-06-06T01:18:34"^^xsd:dateTime ;
+    dcterms:date "2022-06-06T01:18:34"^^xsd:dateTime,
+        "2022-11-21T01:46:55"^^xsd:dateTime ;
+    dcterms:modified "2022-11-21T01:46:55"^^xsd:dateTime ;
+    skos:member <http://linked.data.gov.au/def/tern-cv/08f02a64-cd97-4aac-bc3a-a6e270dbdf51>,
+        <http://linked.data.gov.au/def/tern-cv/2bcc298c-3355-4bf0-9bfc-21ca119d6342>,
+        <http://linked.data.gov.au/def/tern-cv/2d439bef-3bdc-4605-b751-e474dfe005a7>,
+        <http://linked.data.gov.au/def/tern-cv/33173529-e80d-458a-8182-27486279aae2>,
+        <http://linked.data.gov.au/def/tern-cv/52589bb6-d2c4-4a98-a5d3-b54c62ad6692>,
+        <http://linked.data.gov.au/def/tern-cv/630f2c88-68ec-4cdb-a3d6-022a9cc43aa4>,
+        <http://linked.data.gov.au/def/tern-cv/9868a11d-dce0-47ef-b792-b533bc1d11d5>,
+        <http://linked.data.gov.au/def/tern-cv/ac1aa7bb-009e-40d7-a4ae-b8dfc7e1bb46> ;
+    skos:prefLabel "NVIS height class categories"@en .
+
+<http://linked.data.gov.au/def/tern-cv/bbd4ce96-ad77-4097-9089-6bb5a795b5ca> a skos:Concept ;
+    rdfs:label "lichen" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2022-06-07T05:03:49"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2022-06-07T05:03:49"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Composite plant consisting of a fungus living symbiotically with algae; without true roots, stems or leaves." ;
+    skos:notation "N" ;
+    skos:note "Composite plant consisting of a fungus living symbiotically with algae; without true roots, stems or leaves." ;
+    skos:prefLabel "lichen" .
+
+<http://linked.data.gov.au/def/tern-cv/bc526df3-d9c4-435c-85e8-5e4a15f2560e> a skos:Concept ;
+    rdfs:label "palm" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2022-06-07T05:03:49"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2022-06-07T05:03:49"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Palms and other arborescent monocotyledons. Members of the Arecaceae family or the genus Pandanus. (Pandanus is often multi-stemmed)." ;
+    skos:notation "P" ;
+    skos:note "Palms and other arborescent monocotyledons. Members of the Arecaceae family or the genus Pandanus. (Pandanus is often multi-stemmed)." ;
+    skos:prefLabel "palm" .
+
+<http://linked.data.gov.au/def/tern-cv/cfce9286-bce7-4ac5-bf10-d9161d69de93> a skos:Concept ;
+    rdfs:label "cycad" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2022-06-07T05:03:49"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2022-06-07T05:03:49"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Members of the families Cycadaceae and Zamiaceae." ;
+    skos:notation "A" ;
+    skos:note "Members of the families Cycadaceae and Zamiaceae." ;
+    skos:prefLabel "cycad" .
+
+<http://linked.data.gov.au/def/tern-cv/d2d099b2-744f-4169-9582-8197aa98b318> a skos:Concept ;
+    rdfs:label "tree mallee" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2022-06-07T05:03:49"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2022-06-07T05:03:49"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Woody perennial plant usually of the genus Eucalyptus. Multi-stemmed with fewer than five trunks of which at least three exceed 100 mm diameter at breast height (1.3 m). Usually 8 m or more." ;
+    skos:notation "M" ;
+    skos:note "Woody perennial plant usually of the genus Eucalyptus. Multi-stemmed with fewer than five trunks of which at least three exceed 100 mm diameter at breast height (1.3 m). Usually 8 m or more." ;
+    skos:prefLabel "tree mallee" .
+
+<http://linked.data.gov.au/def/tern-cv/d3061a89-3550-40e5-a2fc-32b74ffadabb> a skos:Concept ;
+    rdfs:label "crown cover" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:48:50"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T21:48:50"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "The percentage of the surface of an ecosystem that is under the tree canopy" ;
+    skos:notation "cc" ;
+    skos:note "The percentage of the surface of an ecosystem that is under the tree canopy" ;
+    skos:prefLabel "crown cover" .
+
+<http://linked.data.gov.au/def/tern-cv/d3318847-967d-4f06-aca4-166afefc5918> a skos:Concept ;
+    rdfs:label "tree-fern" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2022-06-07T05:03:49"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2022-06-07T05:03:49"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Characterised by large and usually branched leaves (fronds), arborescent and terrestrial; spores in sporangia on the leaves." ;
+    skos:notation "D" ;
+    skos:note "Characterised by large and usually branched leaves (fronds), arborescent and terrestrial; spores in sporangia on the leaves." ;
+    skos:prefLabel "tree-fern" .
+
+<http://linked.data.gov.au/def/tern-cv/d36e262e-9443-4ff0-9beb-63770b015756> a skos:Concept ;
+    rdfs:label "cover class i" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:47:41"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T21:47:41"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "NVIS cover class, where either foliage cover 10 - 30%, crown cover 20 - 50% or cover 20 - 50%" ;
+    skos:notation "i" ;
+    skos:note "NVIS cover class, where either foliage cover 10 - 30%, crown cover 20 - 50% or cover 20 - 50%" ;
+    skos:prefLabel "cover class i" .
+
+<http://linked.data.gov.au/def/tern-cv/d4139ea0-f738-43ba-9f3f-c2c3675e1047> a skos:Concept ;
+    rdfs:label "shrub" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2022-06-07T05:03:49"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2022-06-07T05:03:49"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Woody plants multi-stemmed at the base (or within 200mm from ground level) or if single stemmed, less than 2 m." ;
+    skos:notation "S" ;
+    skos:note "Woody plants multi-stemmed at the base (or within 200mm from ground level) or if single stemmed, less than 2 m." ;
+    skos:prefLabel "shrub" .
+
+<http://linked.data.gov.au/def/tern-cv/db52882b-d7f2-4149-8af4-91218cce2f0d> a skos:Collection ;
+    rdfs:label "NVIS growth form categories"@en ;
+    dcterms:created "2022-06-06T01:18:34"^^xsd:dateTime ;
+    dcterms:date "2022-06-06T01:18:34"^^xsd:dateTime,
+        "2022-11-20T23:12:37"^^xsd:dateTime ;
+    dcterms:modified "2022-11-20T23:12:37"^^xsd:dateTime ;
+    skos:member <http://linked.data.gov.au/def/tern-cv/0e83677a-84d7-470d-a769-29011328ef4c>,
+        <http://linked.data.gov.au/def/tern-cv/13a245e8-14ff-4702-8182-62947f36e5ab>,
+        <http://linked.data.gov.au/def/tern-cv/349b7fb7-724e-487a-8af6-4a375ab753c7>,
+        <http://linked.data.gov.au/def/tern-cv/3727d11b-a526-44a8-8f5c-4b3df6f996ae>,
+        <http://linked.data.gov.au/def/tern-cv/5046280e-cf21-4efa-a545-231611c2c761>,
+        <http://linked.data.gov.au/def/tern-cv/59dc9b4a-7b67-40ff-bc93-d66ed6b2d908>,
+        <http://linked.data.gov.au/def/tern-cv/6b683421-3149-4fb0-ae56-b19f983ec409>,
+        <http://linked.data.gov.au/def/tern-cv/712be291-ef1e-41c1-a0a3-2565ac224fa8>,
+        <http://linked.data.gov.au/def/tern-cv/72d381e6-2921-4c28-98b1-6767097055d3>,
+        <http://linked.data.gov.au/def/tern-cv/7698e775-1987-43f5-803d-1528589f1718>,
+        <http://linked.data.gov.au/def/tern-cv/8d67015b-4749-4e58-8cff-b0ce8d073a26>,
+        <http://linked.data.gov.au/def/tern-cv/93cf82ef-1e00-4220-bec4-75490375b911>,
+        <http://linked.data.gov.au/def/tern-cv/9ae3ffec-031e-4c4a-88b1-f718567b26c3>,
+        <http://linked.data.gov.au/def/tern-cv/ab699e97-cf4e-4226-be5b-51ea5cbaea08>,
+        <http://linked.data.gov.au/def/tern-cv/b3df0155-7941-41d9-bc08-84d6372d0457>,
+        <http://linked.data.gov.au/def/tern-cv/bbd4ce96-ad77-4097-9089-6bb5a795b5ca>,
+        <http://linked.data.gov.au/def/tern-cv/bc526df3-d9c4-435c-85e8-5e4a15f2560e>,
+        <http://linked.data.gov.au/def/tern-cv/cfce9286-bce7-4ac5-bf10-d9161d69de93>,
+        <http://linked.data.gov.au/def/tern-cv/d2d099b2-744f-4169-9582-8197aa98b318>,
+        <http://linked.data.gov.au/def/tern-cv/d3318847-967d-4f06-aca4-166afefc5918>,
+        <http://linked.data.gov.au/def/tern-cv/d4139ea0-f738-43ba-9f3f-c2c3675e1047>,
+        <http://linked.data.gov.au/def/tern-cv/e439a1fe-521b-4206-8f0a-47c4af0e06da>,
+        <http://linked.data.gov.au/def/tern-cv/e77c7c6d-9260-4f1e-948b-d002d6495a62>,
+        <http://linked.data.gov.au/def/tern-cv/eb4b7b33-2ef6-43b6-befe-ef4c0a926759>,
+        <http://linked.data.gov.au/def/tern-cv/fea353a0-313b-46d7-8d84-cafa441fa1b1> ;
+    skos:prefLabel "NVIS growth form categories"@en .
+
+<http://linked.data.gov.au/def/tern-cv/e439a1fe-521b-4206-8f0a-47c4af0e06da> a skos:Concept ;
+    rdfs:label "hummock grass" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2022-06-07T05:03:49"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2022-06-07T05:03:49"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Coarse xeromorphic grass with a mound-like form often dead in the middle; genus is Triodia." ;
+    skos:notation "H" ;
+    skos:note "Coarse xeromorphic grass with a mound-like form often dead in the middle; genus is Triodia." ;
+    skos:prefLabel "hummock grass" .
+
+<http://linked.data.gov.au/def/tern-cv/e697214b-9225-49ae-8a75-78d293fa3d09> a skos:Concept ;
+    rdfs:label "class" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T22:01:15"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T22:01:15"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Dominant growth form for the structurally dominant stratum." ;
+    skos:notation "1" ;
+    skos:note "Dominant growth form for the structurally dominant stratum." ;
+    skos:prefLabel "class" .
+
+<http://linked.data.gov.au/def/tern-cv/e77c7c6d-9260-4f1e-948b-d002d6495a62> a skos:Concept ;
+    rdfs:label "seagrass" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2022-06-07T05:03:49"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2022-06-07T05:03:49"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Flowering angiosperms forming sparse to dense mats of material at the subtidal and down to 30 m below MSL. Occasionally exposed." ;
+    skos:notation "J" ;
+    skos:note "Flowering angiosperms forming sparse to dense mats of material at the subtidal and down to 30 m below MSL. Occasionally exposed." ;
+    skos:prefLabel "seagrass" .
+
+<http://linked.data.gov.au/def/tern-cv/e925f8a8-086b-4479-8d3b-b75740eba9d9> a skos:Concept ;
+    rdfs:label "mid stratum" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:52:07"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:description "This is the middle vegetation stratum, above the ground layer and comprises growth forms such as Shrubs, low trees, mallee shrubs, vines, (low shrubs, tall grasses, tall forbs, tall sedges), grass-trees, tree-ferns, cycads, palms. May also include epiphytes, lichens." ;
+    dcterms:modified "2025-09-17T21:52:07"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Mid, shrub (if only one mid layer occurs it is coded M1)" ;
+    skos:notation "M" ;
+    skos:note "Mid, shrub (if only one mid layer occurs it is coded M1)" ;
+    skos:prefLabel "mid stratum" .
+
+<http://linked.data.gov.au/def/tern-cv/eb4b7b33-2ef6-43b6-befe-ef4c0a926759> a skos:Concept ;
+    rdfs:label "bryophyte" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2022-06-07T05:03:49"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2022-06-07T05:03:49"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Mosses and Liverworts. Mosses are small plants usually with a slender leaf- bearing stem with no true vascular tissue. Liverworts are often moss-like in appearance or consisting of a flat, ribbon-like green thallus." ;
+    skos:notation "B" ;
+    skos:note "Mosses and Liverworts. Mosses are small plants usually with a slender leaf- bearing stem with no true vascular tissue. Liverworts are often moss-like in appearance or consisting of a flat, ribbon-like green thallus." ;
+    skos:prefLabel "bryophyte" .
+
+<http://linked.data.gov.au/def/tern-cv/eb86708f-ad5d-4278-ae74-967e0ebaf8b1> a skos:Concept ;
+    rdfs:label "association" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T22:00:43"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T22:00:43"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Dominant growth form, height, cover and species (to a maximum of 3 species) for each of the three main strata. (i.e. Upper, Mid and Ground)." ;
+    skos:notation "5" ;
+    skos:note "Dominant growth form, height, cover and species (to a maximum of 3 species) for each of the three main strata. (i.e. Upper, Mid and Ground)." ;
+    skos:prefLabel "association" .
+
+<http://linked.data.gov.au/def/tern-cv/edf31297-5f10-42a4-bda3-1a9dbcaf3912> a skos:Concept ;
+    rdfs:label "NVIS substratum M1",
+        "middle 1" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:53:53"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T21:53:53"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:altLabel "NVIS substratum M1" ;
+    skos:definition "Tallest shrub layer." ;
+    skos:notation "M1" ;
+    skos:note "Tallest shrub layer." ;
+    skos:prefLabel "middle 1" .
+
+<http://linked.data.gov.au/def/tern-cv/f2f3bb92-6605-40fa-8a04-8d37f14c6901> a skos:Concept ;
+    rdfs:label "NVIS substratum U2",
+        "upper 2" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:54:40"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T21:54:40"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:altLabel "NVIS substratum U2" ;
+    skos:definition "Sub-canopy layer, second tree layer." ;
+    skos:notation "U2" ;
+    skos:note "Sub-canopy layer, second tree layer." ;
+    skos:prefLabel "upper 2" .
+
+<http://linked.data.gov.au/def/tern-cv/fea353a0-313b-46d7-8d84-cafa441fa1b1> a skos:Concept ;
+    rdfs:label "sedge" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2022-06-07T05:03:49"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2022-06-07T05:03:49"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:definition "Herbaceous, usually perennial erect plant generally with a tufted habit and of the families Cyperaceae (true sedges) or Restionaceae (node sedges)." ;
+    skos:notation "V" ;
+    skos:note "Herbaceous, usually perennial erect plant generally with a tufted habit and of the families Cyperaceae (true sedges) or Restionaceae (node sedges)." ;
+    skos:prefLabel "sedge" .
+
+<http://linked.data.gov.au/def/tern-cv/ff20d11c-db08-4f3f-a6d8-576a0fb7a880> a skos:Concept ;
+    rdfs:label "NVIS substratum M2",
+        "middle 2" ;
+    dcterms:created "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:date "2025-09-17T21:54:03"^^xsd:dateTime,
+        "2022-06-06T12:11:08+00:00"^^xsd:dateTime ;
+    dcterms:modified "2025-09-17T21:54:03"^^xsd:dateTime ;
+    dcterms:relation "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    dcterms:source "NVIS Technical Working Group (2017) Australian Vegetation Attribute Manual: National Vegetation Information System, Version 7.0. Department of the Environment and Energy, Canberra. Prep by Bolton, M.P., deLacey, C. and Bossard, K.B. (Eds)." ;
+    skos:altLabel "NVIS substratum M2" ;
+    skos:definition "Next shrub layer." ;
+    skos:notation "M2" ;
+    skos:note "Next shrub layer." ;
+    skos:prefLabel "middle 2" .
+

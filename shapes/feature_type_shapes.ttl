@@ -1,0 +1,13 @@
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX tern-shapes: <https://w3id.org/tern/shapes/tern/>
+
+tern-shapes:FeatureTypeConcept
+    a sh:NodeShape ;
+    sh:property [
+        sh:message "Feature Type concepts must declare at least one skos:example." ;
+        sh:minCount 1 ;
+        sh:path skos:example ;
+    ] ;
+    sh:targetClass skos:Concept ;
+.

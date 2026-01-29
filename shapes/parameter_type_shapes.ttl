@@ -1,0 +1,80 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+PREFIX tern-shapes: <https://w3id.org/tern/shapes/tern/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+tern-shapes:ParameterTypeConcept
+    a sh:NodeShape ;
+    sh:property
+        [
+            sh:message "Parameter Type concepts may declare at most one qudt:minInclusive value, and it must be numeric." ;
+            sh:maxCount 1 ;
+            sh:or (
+                [ sh:datatype xsd:decimal ]
+                [ sh:datatype xsd:double ]
+                [ sh:datatype xsd:float ]
+                [ sh:datatype xsd:integer ]
+            ) ;
+            sh:path qudt:minInclusive ;
+        ] ,
+        [
+            sh:message "Parameter Type concepts may declare at most one qudt:maxInclusive value, and it must be numeric." ;
+            sh:maxCount 1 ;
+            sh:or (
+                [ sh:datatype xsd:decimal ]
+                [ sh:datatype xsd:double ]
+                [ sh:datatype xsd:float ]
+                [ sh:datatype xsd:integer ]
+            ) ;
+            sh:path qudt:maxInclusive ;
+        ] ,
+        [
+            sh:message "Parameter Type concepts may declare at most one qudt:minExclusive value, and it must be numeric." ;
+            sh:maxCount 1 ;
+            sh:or (
+                [ sh:datatype xsd:decimal ]
+                [ sh:datatype xsd:double ]
+                [ sh:datatype xsd:float ]
+                [ sh:datatype xsd:integer ]
+            ) ;
+            sh:path qudt:minExclusive ;
+        ] ,
+        [
+            sh:message "Parameter Type concepts may declare at most one qudt:maxExclusive value, and it must be numeric." ;
+            sh:maxCount 1 ;
+            sh:or (
+                [ sh:datatype xsd:decimal ]
+                [ sh:datatype xsd:double ]
+                [ sh:datatype xsd:float ]
+                [ sh:datatype xsd:integer ]
+            ) ;
+            sh:path qudt:maxExclusive ;
+        ] ,
+        [
+            sh:message "Parameter Type concepts may declare at most one tern:unit." ;
+            sh:maxCount 1 ;
+            sh:path tern:unit ;
+        ] ,
+        [
+            sh:message "Parameter Type concepts may declare dcterms:source values." ;
+            sh:path dcterms:source ;
+        ] ,
+        [
+            sh:message "If provided, tern:valueType must be one of the supported TERN value types." ;
+            sh:path tern:valueType ;
+            sh:in (
+                tern:Boolean
+                tern:Date
+                tern:DateTime
+                tern:Float
+                tern:IRI
+                tern:Integer
+                tern:Taxon
+                tern:Text
+            ) ;
+        ] ;
+    sh:targetClass skos:Concept ;
+.
