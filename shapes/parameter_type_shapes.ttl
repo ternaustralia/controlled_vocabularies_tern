@@ -59,7 +59,8 @@ tern-shapes:ParameterTypeConcept
             sh:path tern:unit ;
         ] ,
         [
-            sh:message "Parameter Type concepts may declare dcterms:source values." ;
+            sh:message "Parameter Type concepts must declare at least one dcterms:source value." ;
+            sh:minCount 1 ;
             sh:path dcterms:source ;
         ] ,
         [
