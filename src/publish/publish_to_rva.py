@@ -10,8 +10,15 @@ from pathlib import Path
 
 from rdflib import Graph
 
-from .filters import FilterResults, apply_publish_filters
-from .rva_client import RVAClient, RVAClientError
+# Handle both direct execution and module imports
+if __name__ == "__main__" and __package__ is None:
+    # Add parent directory to path for direct execution
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+    from publish.filters import FilterResults, apply_publish_filters
+    from publish.rva_client import RVAClient, RVAClientError
+else:
+    from .filters import FilterResults, apply_publish_filters
+    from .rva_client import RVAClient, RVAClientError
 
 
 def build_parser() -> argparse.ArgumentParser:
