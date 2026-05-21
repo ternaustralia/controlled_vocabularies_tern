@@ -38,7 +38,7 @@ tern-shapes:CollectionBaseline
                 [
                     sh:message "Collection member list entries must be skos:Concept or skos:Collection." ;
                     sh:minCount 1 ;
-                    sh:path ( skos:memberList rdf:rest* rdf:first ) ;
+                    sh:path ( skos:memberList [ sh:zeroOrMorePath rdf:rest ] rdf:first ) ;
                     sh:or (
                         [ sh:class skos:Concept ]
                         [ sh:class skos:Collection ]
@@ -68,7 +68,7 @@ tern-shapes:OrderedCollectionBaseline
         [
             sh:message "Ordered collection list entries must be skos:Concept or skos:Collection." ;
             sh:minCount 1 ;
-            sh:path ( skos:memberList rdf:rest* rdf:first ) ;
+            sh:path ( skos:memberList [ sh:zeroOrMorePath rdf:rest ] rdf:first ) ;
             sh:or (
                 [ sh:class skos:Concept ]
                 [ sh:class skos:Collection ]

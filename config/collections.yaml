@@ -21,7 +21,7 @@ collections:
     collection: "http://linked.data.gov.au/def/tern-cv/bd6f696c-cc8d-4096-b291-a40c834a5bee"
     validators: []
   - id: "http://linked.data.gov.au/def/tern-cv/5666ea05-ab09-4cb5-99fe-7d9a7258c209"
-    name: "Australian Soil and Land Survey Field Handbook Categorical Values"
+    name: "ASLS Field Handbook 3rd edition categorical values"
     endpoint: "https://graphdb.tern.org.au/repositories/tern_vocabs_core"
     collection: "http://linked.data.gov.au/def/tern-cv/5666ea05-ab09-4cb5-99fe-7d9a7258c209"
     validators: []
