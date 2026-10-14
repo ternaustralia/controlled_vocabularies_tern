@@ -1,0 +1,24 @@
+PREFIX schema: <https://schema.org/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX tern-shapes: <https://w3id.org/tern/shapes/tern/>
+
+tern-shapes:InstrumentTypeConcept
+    a sh:NodeShape ;
+    sh:property
+        [
+            sh:message "Instrument Type concepts may describe the manufacturer using schema:manufacturer as a literal, IRI, or schema:Organization." ;
+            sh:or (
+                [ sh:nodeKind sh:Literal ]
+                [ sh:nodeKind sh:IRI ]
+                [ sh:class schema:Organization ]
+            ) ;
+            sh:path schema:manufacturer ;
+        ] ,
+        [
+            sh:message "Instrument Type concepts may declare schema:model as a literal identifying the model." ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:model ;
+        ] ;
+    sh:targetClass skos:Concept ;
+.
