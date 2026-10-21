@@ -2,6 +2,7 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
 PREFIX tern-shapes: <https://w3id.org/tern/shapes/tern/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
@@ -86,11 +87,16 @@ tern-shapes:CollectionMemberConceptBaseline
             sh:minCount 1 ;
             sh:maxCount 1 ;
             sh:path skos:prefLabel ;
-        ] ,
-        [
-            sh:message "Collection member concepts must have at least one skos:definition." ;
-            sh:minCount 1 ;
-            sh:path skos:definition ;
         ] ;
+    sh:message "Collection member concepts, except tern:Method, must have at least one skos:definition." ;
+    sh:or (
+        [ sh:class tern:Method ]
+        [
+            sh:property [
+                sh:minCount 1 ;
+                sh:path skos:definition ;
+            ] ;
+        ]
+    ) ;
     sh:targetClass skos:Concept ;
 .
