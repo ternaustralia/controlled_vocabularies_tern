@@ -8,9 +8,16 @@ tern-shapes:ConceptBaseline
     a sh:NodeShape ;
     sh:property 
         [
-            sh:message "Concepts must have at least one skos:prefLabel." ;
+            sh:message "Concepts must have at least one skos:prefLabel, at most one per language." ;
             sh:minCount 1 ;
             sh:path skos:prefLabel ;
+            sh:uniqueLang true ;
+        ] ,
+        [
+            sh:message "Concepts must have at least one skos:inScheme IRI." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path skos:inScheme ;
         ] ,
         [
             sh:message "Concepts must have at least one skos:definition." ;
